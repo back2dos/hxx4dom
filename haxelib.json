@@ -16,6 +16,6 @@
   "version": "0.0.0",
   "url": "https://github.com/back2dos/hxx4dom/",
   "dependencies": {
-    "hxx": "*"
+    "hxx": ""
   }
 }
