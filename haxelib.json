@@ -1,0 +1,21 @@
+{
+  "name": "hxx4dom",
+  "license": "MIT",
+  "tags": [
+    "hxx",
+    "jsx",
+    "dom",
+    "html",
+    "template"
+  ],
+  "classPath": "src",
+  "contributors": [
+    "back2dos"
+  ],
+  "releasenote": "initial release",
+  "version": "0.0.0",
+  "url": "https://github.com/back2dos/hxx4dom/",
+  "dependencies": {
+    "hxx": "*"
+  }
+}
