@@ -12,10 +12,11 @@
   "contributors": [
     "back2dos"
   ],
-  "releasenote": "initial release",
-  "version": "0.0.0",
+  "releasenote": "Support for constrol structures",
+  "version": "0.1.0",
   "url": "https://github.com/back2dos/hxx4dom/",
   "dependencies": {
-    "hxx": ""
+    "hxx": "",
+    "tink_stringly": ""
   }
 }
