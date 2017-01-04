@@ -20,6 +20,8 @@ typedef Attr = {
 	@:optional var spellcheck(default, null):Bool;
 	@:optional var style(default, null):String;
   
+  @:optional var customAttributes(default, null):Dynamic<tink.Stringly>;
+  
 	@:optional var onwheel(default, null):Callback<Event>;
 	@:optional var oncopy(default, null):Callback<Event>;
 	@:optional var oncut(default, null):Callback<Event>;
