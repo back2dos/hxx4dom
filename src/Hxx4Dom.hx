@@ -7,11 +7,26 @@ import js.Browser.*;
 import tink.core.Any;
 import hxx4dom.Attr;
 
-private typedef Children = Array<Node>;
+private typedef Children = Array<Hxx4Dom<Dynamic>>;
 
-class Hxx4Dom { 
+abstract Hxx4Dom<T:Node>(T) from T to T { 
+  
+  @:from static function ofString(s:String):Hxx4Dom<Node>
+    return document.createTextNode(s);
+    
+  @:noCompletion static public function flatten(children:Children):Node 
+    return switch children {
+      case []: document.createDocumentFragment();
+      case [v]: v;
+      case v: 
+        var f = document.createDocumentFragment();
+        for (c in v)
+          f.appendChild(c);
+        f;
+    }
+     
 
-  static function tag(name:String, args:Dynamic, ?children:Array<Node>):Dynamic {
+  static function tag(name:String, args:Dynamic, ?children:Children):Dynamic {
     var ret = document.createElement(name);
     
     for (f in Reflect.fields(args))
@@ -79,27 +94,48 @@ import haxe.macro.Expr;
 import hxx.*;
 
 using haxe.macro.Context;
+using haxe.macro.Tools;
+using tink.CoreApi;
 
-class Hxx4Dom {
-  static public function hxx(e:Expr) 
-    return 
-      Parser.parse(e, function (name:StringAt, attr, children:haxe.ds.Option<Expr>) {
+abstract Hxx4Dom({}) {
+  static function nodify(children:Option<Expr>) {
+    return children.map(function (e) return switch e {
+      case macro $a{children}:
+        return {
+          pos: e.pos,
+          expr: EArrayDecl(
+            [for (c in children) switch c {
+              case macro for ($head) $body: c;
+              default: macro @:pos(c.pos) ($c : Hxx4Dom<Dynamic>);
+            }]
+          )
+        }
+      case v: Context.fatalError('Cannot generate ${v.toString()}', v.pos);      
+    });
+  }
+  static public function hxx(e:Expr) {
+    var ret =  
+      Parser.parse(e, function (name:StringAt, attr, children:Option<Expr>) {
+        if (name.value == '...') {
+          var children = 
+            switch nodify(children) {
+              case Some(v): v;
+              default: macro [];
+            }
+          
+          return macro @:pos(name.pos) Hxx4Dom.flatten($children);
+        }
         var args = [attr];
         
-        switch children {
-          case Some(macro $a{children}): 
-            children = [for (c in children) switch c.expr {
-              case ECall(_, _):
-                macro @:pos(c.pos) ($c : js.html.Node);
-              default:
-                macro @:pos(c.pos) js.Browser.document.createTextNode($c);
-            }];
-            args.push(macro [$a{children}]);
-            //args.push(macro @:pos(v.pos) ($v : vdom.VNode));
+        switch nodify(children) {
+          case Some(v): 
+            args.push(v);
           default:
         }
         
         return macro @:pos(name.pos) $i{name.value}($a{args});
       });
+    return ret;
+  }
 }
 #end
