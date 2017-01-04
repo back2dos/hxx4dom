@@ -13,6 +13,10 @@ class RunTests {
         document.body.appendChild(
           hxx('
             <div class="foo">
+              {import "test"}
+              {import "test.hxx"}
+              {import "./tests/test"}
+              {import "./tests/test.hxx"}
               <raw content={s}/>
               <button onclick={function () alert("clicked!")} style="color: red">click me!</button>
             </div>
