@@ -12,8 +12,8 @@
 	"contributors": [
 		"back2dos"
 	],
-	"releasenote": "Use tink_hxx instead of hxx.",
-	"version": "0.1.1",
+	"releasenote": "Use simplified generator.",
+	"version": "0.1.2",
 	"url": "https://github.com/back2dos/hxx4dom/",
 	"dependencies": {
 		"tink_hxx": "",
