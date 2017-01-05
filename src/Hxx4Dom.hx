@@ -122,34 +122,8 @@ abstract Hxx4Dom({}) {
       case v: Context.fatalError('Cannot generate ${v.toString()}', v.pos);      
     });
   }
-  static public function hxx(e:Expr) {
-    
-    var ret =  
-      Parser.parse(e, function (name:StringAt, attr:Expr, children:Option<Expr>) {
-                
-        if (name.value == '...') {
-          var children = 
-            switch nodify(children) {
-              case Some(v): v;
-              default: macro [];
-            }
-          
-          return macro @:pos(name.pos) Hxx4Dom.flatten($children);
-        }
-        
-        var args = [Generator.applySplats(attr, 'customAttributes')];
-        
-        switch nodify(children) {
-          case Some(v): 
-            args.push(v);
-          default:
-        }
-        
-        return macro @:pos(name.pos) $i{name.value}($a{args});
-      });
-      
-    trace(ret.toString());
-    return ret;
+  static public function hxx(e:Expr) {    
+    return Parser.parse(e, { child: macro : Hxx4Dom<js.html.Node> });
   }
 }
 #end
