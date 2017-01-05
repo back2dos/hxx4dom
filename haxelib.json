@@ -16,7 +16,7 @@
   "version": "0.1.0",
   "url": "https://github.com/back2dos/hxx4dom/",
   "dependencies": {
-    "hxx": "",
+    "tink_hxx": "",
     "tink_stringly": ""
   }
 }

@@ -100,7 +100,7 @@ abstract Hxx4Dom<T:Node>(T) from T to T {
 }
 #else
 import haxe.macro.Expr;
-import hxx.*;
+import tink.hxx.*;
 
 using haxe.macro.Context;
 using haxe.macro.Tools;
