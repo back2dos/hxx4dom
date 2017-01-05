@@ -1,22 +1,22 @@
 {
-  "name": "hxx4dom",
-  "license": "MIT",
-  "tags": [
-    "hxx",
-    "jsx",
-    "dom",
-    "html",
-    "template"
-  ],
-  "classPath": "src",
-  "contributors": [
-    "back2dos"
-  ],
-  "releasenote": "Support for constrol structures",
-  "version": "0.1.0",
-  "url": "https://github.com/back2dos/hxx4dom/",
-  "dependencies": {
-    "tink_hxx": "",
-    "tink_stringly": ""
-  }
+	"name": "hxx4dom",
+	"license": "MIT",
+	"tags": [
+		"hxx",
+		"jsx",
+		"dom",
+		"html",
+		"template"
+	],
+	"classPath": "src",
+	"contributors": [
+		"back2dos"
+	],
+	"releasenote": "Use tink_hxx instead of hxx.",
+	"version": "0.1.1",
+	"url": "https://github.com/back2dos/hxx4dom/",
+	"dependencies": {
+		"tink_hxx": "",
+		"tink_stringly": ""
+	}
 }
