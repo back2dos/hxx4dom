@@ -13,6 +13,7 @@ class RunTests {
         document.body.appendChild(
           hxx('
             <div class="foo">
+              <i>test</i>
               {import "test"}
               {import "test.hxx"}
               {import "./tests/test"}

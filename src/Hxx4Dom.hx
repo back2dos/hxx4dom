@@ -85,6 +85,10 @@ abstract Hxx4Dom<T:Node>(T) from T to T {
   
   static public inline function strong(attr:Attr, ?children:Children):Element return tag('strong', attr, children);
   static public inline function em(attr:Attr, ?children:Children):Element return tag('em', attr, children);
+  
+  static public inline function i(attr:AnchorAttr, ?children:Children):Element return tag('i', attr, children);
+  static public inline function b(attr:AnchorAttr, ?children:Children):Element return tag('b', attr, children);
+  
   static public inline function span(attr:Attr, ?children:Children):SpanElement return tag('span', attr, children);
   static public inline function a(attr:AnchorAttr, ?children:Children):AnchorElement return tag('a', attr, children);
   
