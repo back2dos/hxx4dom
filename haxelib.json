@@ -12,7 +12,7 @@
 	"contributors": [
 		"back2dos"
 	],
-	"releasenote": "Add a few missing tags.",
+	"releasenote": "Add support for \"label\" tag and for \"name\" attribute",
 	"version": "0.1.4",
 	"url": "https://github.com/back2dos/hxx4dom/",
 	"dependencies": {
