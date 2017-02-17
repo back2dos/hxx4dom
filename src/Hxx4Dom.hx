@@ -101,6 +101,7 @@ abstract Hxx4Dom<T:Node>(T) from T to T {
   
   static public inline function img(attr: ImgAttr ):ImageElement return tag('img', attr);
   static public inline function input(attr: InputAttr ):InputElement return tag('input', attr);  
+  static public inline function label(attr: LabelAttr ):LabelElement return tag('label', attr); 
 }
 #else
 import haxe.macro.Expr;

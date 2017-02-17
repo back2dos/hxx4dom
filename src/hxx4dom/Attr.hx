@@ -7,6 +7,7 @@ using tink.CoreApi;
 typedef Attr = {
   @:optional var className(default, null):String;
 	@:optional var id(default, null):String;
+	@:optional var name(default, null):String;
 	@:optional var title(default, null):String;
 	@:optional var lang(default, null):String;
 	@:optional var dir(default, null):String;
@@ -106,6 +107,11 @@ typedef AnchorAttr = {> Attr,
 
 typedef InputAttr = {> Attr, 
   @:optional var value(default, null):String; 
+  @:optional var type(default, null):String;
+}
+
+typedef LabelAttr = {> Attr,
+	@optional var htmlFor(default, null):String;
 }
 
 typedef ImgAttr = {> Attr, 
