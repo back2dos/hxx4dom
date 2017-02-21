@@ -12,8 +12,8 @@
 	"contributors": [
 		"back2dos"
 	],
-	"releasenote": "Add support for \"label\" tag and for \"name\" attribute",
-	"version": "0.1.4",
+	"releasenote": "Add children support for \"label\" tag, fix issue with optional \"htmlFor\" attribute for \"label\" tag",
+	"version": "0.1.5",
 	"url": "https://github.com/back2dos/hxx4dom/",
 	"dependencies": {
 		"tink_hxx": "",

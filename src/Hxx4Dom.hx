@@ -99,9 +99,9 @@ abstract Hxx4Dom<T:Node>(T) from T to T {
   static public inline function button(attr:{>Attr, @:optional var disabled(default, null):Bool; }, ?children:Children):ButtonElement return tag('button', attr, children);
   static public inline function textarea(attr:Attr, ?children:Children):TextAreaElement return tag('textarea', attr, children);
   
-  static public inline function img(attr: ImgAttr ):ImageElement return tag('img', attr);
-  static public inline function input(attr: InputAttr ):InputElement return tag('input', attr);  
-  static public inline function label(attr: LabelAttr ):LabelElement return tag('label', attr); 
+  static public inline function img(attr: ImgAttr):ImageElement return tag('img', attr);
+  static public inline function input(attr: InputAttr):InputElement return tag('input', attr);  
+  static public inline function label(attr: LabelAttr, ?children:Children):LabelElement return tag('label', attr, children); 
 }
 #else
 import haxe.macro.Expr;

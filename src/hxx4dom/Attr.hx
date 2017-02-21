@@ -111,7 +111,7 @@ typedef InputAttr = {> Attr,
 }
 
 typedef LabelAttr = {> Attr,
-	@optional var htmlFor(default, null):String;
+  @:optional var htmlFor(default, null):String;
 }
 
 typedef ImgAttr = {> Attr, 
