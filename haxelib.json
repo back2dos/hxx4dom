@@ -12,7 +12,7 @@
 	"contributors": [
 		"back2dos"
 	],
-	"releasenote": "Add children support for \"label\" tag, fix issue with optional \"htmlFor\" attribute for \"label\" tag",
+	"releasenote": "Add children support for label tag, fix issue with optional htmlFor attribute for label tag",
 	"version": "0.1.5",
 	"url": "https://github.com/back2dos/hxx4dom/",
 	"dependencies": {
